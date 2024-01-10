@@ -23,7 +23,7 @@ jobs:
           MARIADB_DATABASE: ci4_test
           MARIADB_ROOT_PASSWORD: root
         ports:
-          - 3306:3306
+          - 3306:3307
         options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
     steps:
     - uses: actions/checkout@v3
@@ -54,7 +54,7 @@ jobs:
         database.tests.username: root
         database.tests.password: root
         database.tests.DBDriver: MySQLi
-        database.tests.port: 3306
+        database.tests.port: 3307
         CLIENT_ID: ${{ secrets.CLIENT_ID }}
         TENANT_ID: ${{ secrets.TENANT_ID }}
         CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
