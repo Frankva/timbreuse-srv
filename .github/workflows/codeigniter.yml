@@ -23,7 +23,7 @@ jobs:
           MARIADB_DATABASE: ci4_test
           MARIADB_ROOT_PASSWORD: root
         ports:
-          - 3306:3307
+          - 3307:3307
         options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
     steps:
     - uses: actions/checkout@v3
