@@ -22,10 +22,10 @@ jobs:
         env:
           MYSQL_DATABASE: ci4_test
           MYSQL_ROOT_PASSWORD: root
-          MYSQL_TCP_PORT: 3307
+          MYSQL_TCP_PORT: 3306
         ports:
-          - 3307:3307
-        options: --health-cmd="mysqladmin -u root -P 3307 -p root ping" --health-interval=10s --health-timeout=5s --health-retries=3
+          - 3306:3306
+        options: --health-cmd="mysqladmin -u root -P 3306 -p root ping" --health-interval=10s --health-timeout=5s --health-retries=3
     steps:
     - uses: actions/checkout@v3
 
@@ -55,7 +55,7 @@ jobs:
         database.tests.username: root
         database.tests.password: root
         database.tests.DBDriver: MySQLi
-        database.tests.port: 3307
+        database.tests.port: 3306
         CLIENT_ID: ${{ secrets.CLIENT_ID }}
         TENANT_ID: ${{ secrets.TENANT_ID }}
         CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
