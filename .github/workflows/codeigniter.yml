@@ -22,10 +22,9 @@ jobs:
         env:
           MYSQL_DATABASE: ci4_test
           MYSQL_ROOT_PASSWORD: root
-          MYSQL_TCP_PORT: 3306
         ports:
           - 3306:3306
-        options: --health-cmd="mysqladmin -u root -P 3306 -p root ping" --health-interval=10s --health-timeout=5s --health-retries=3
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
     steps:
     - uses: actions/checkout@v3
 
