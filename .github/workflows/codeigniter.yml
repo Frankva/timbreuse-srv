@@ -17,11 +17,11 @@ jobs:
     environment: unit_test
     runs-on: ubuntu-latest
     services:
-      mariadb:
-        image: mariadb
+      db:
+        image: mysql
         env:
-          MARIADB_DATABASE: ci4_test
-          MARIADB_ROOT_PASSWORD: root
+          MYSQL_DATABASE: ci4_test
+          MYSQL_ROOT_PASSWORD: root
           MYSQL_TCP_PORT: 3307
         ports:
           - 3307:3307
