@@ -25,7 +25,7 @@ jobs:
           MYSQL_TCP_PORT: 3307
         ports:
           - 3307:3307
-        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+        options: --health-cmd="mysqladmin -u root -P 3307 ping" --health-interval=10s --health-timeout=5s --health-retries=3
     steps:
     - uses: actions/checkout@v3
 
