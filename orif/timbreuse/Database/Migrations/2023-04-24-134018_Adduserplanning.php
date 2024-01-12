@@ -44,7 +44,7 @@ class Adduserplanning extends Migration
         $this->forge->addForeignKey('id_user', 'user_sync','id_user');
         $this->forge->addForeignKey('id_planning', 'planning','id_planning');
         $this->forge->createTable('user_planning');
-        $this->add_constraint_date();
+      #  $this->add_constraint_date();
 	}
 
     public function add_constraint_date()
