@@ -17,7 +17,7 @@ jobs:
     environment: unit_test
     runs-on: ubuntu-latest
     services:
-      db:
+      mariadb:
         image: mariadb
         env:
           MYSQL_DATABASE: ci4_test
