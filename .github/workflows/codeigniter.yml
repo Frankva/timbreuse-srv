@@ -49,7 +49,6 @@ jobs:
 
     - name: Execute tests (Unit and Feature tests) via PHPUnit
       env:
-        database.default.database: ci4_test
         database.tests.hostname: 127.0.0.1
         database.tests.database: ci4_test
         database.tests.username: root
