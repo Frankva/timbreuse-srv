@@ -49,13 +49,13 @@ jobs:
 
     - name: Execute tests (Unit and Feature tests) via PHPUnit
       env:
-        CI_ENVIRONMENT: development
         database.tests.hostname: 127.0.0.1
         database.tests.database: ci4_test
         database.tests.username: root
         database.tests.password: root
         database.tests.DBDriver: MySQLi
         database.tests.port: 3306
+        database.tests.DBPrefix:  
         CLIENT_ID: ${{ secrets.CLIENT_ID }}
         TENANT_ID: ${{ secrets.TENANT_ID }}
         CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
