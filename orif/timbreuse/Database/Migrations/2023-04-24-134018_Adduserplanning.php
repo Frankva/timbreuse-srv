@@ -44,17 +44,17 @@ class Adduserplanning extends Migration
         $this->forge->addForeignKey('id_user', 'user_sync','id_user');
         $this->forge->addForeignKey('id_planning', 'planning','id_planning');
         $this->forge->createTable('user_planning');
-      #  $this->add_constraint_date();
+        $this->add_constraint_date($this->db);
 	}
 
-    public function add_constraint_date()
+    public function add_constraint_date($db)
     {
         $sql = 'ALTER TABLE `user_planning` '
             . 'ADD CONSTRAINT `check_date_begin` '
             . 'CHECK(`date_begin` < `date_end`), '
             . 'ADD CONSTRAINT `check_date_end` '
             . 'CHECK(`date_end` > `date_begin`);';
-        $this->db->query($sql);
+        $db->query($sql);
     }
 
 	public function down()

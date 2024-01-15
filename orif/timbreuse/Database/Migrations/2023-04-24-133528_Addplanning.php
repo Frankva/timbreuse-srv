@@ -60,7 +60,7 @@ class Addplanning extends Migration
 		$this->forge->addField($field);
 		$this->forge->addPrimaryKey('id_planning');
         $this->forge->createTable('planning');
-        // $this->call_seeds();
+        $this->call_seeds();
 	}
 
     public function call_seeds() {
